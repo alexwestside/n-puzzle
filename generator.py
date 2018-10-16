@@ -62,7 +62,7 @@ class Generator:
                 l += 1
 
     def __reshape_puzzle(self):
-        self.__shape = f"{self.size}\n"
+        self.__shape = "{}\n".format(self.size)
         for row in self.__puzzle:
             for item in row:
                 self.__shape += str(item) + ' '

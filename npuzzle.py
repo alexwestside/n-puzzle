@@ -3,7 +3,7 @@ from puzzle import Puzzle
 
 
 def main():
-    pass
+    puzzle
 
 
 if __name__ == '__main__':
@@ -22,7 +22,5 @@ if __name__ == '__main__':
         if args.size:
             puzzle.size = args.size
         puzzle.raw = puzzle.generate()
-
-    print(puzzle.raw)
 
     main()
