@@ -7,7 +7,7 @@ class Generator:
     def __init__(self):
         self.size = 3
         self.steps = 500
-        self.shape = f"{self.size}\n"
+        self.shape = ""
         self.puzzle = []
         self.puzzle_numbers = []
 
@@ -15,7 +15,19 @@ class Generator:
         random.seed()
         self.generate_solved_puzzle()
         for i in range(self.steps):
-            self.custom_swap()
+            zx, zy = self.zero_coord()
+            lines = []
+            if zx != 0:
+                lines.append((zx - 1, zy))
+            if zx != self.size - 1:
+                lines.append((zx + 1, zy))
+            if zy != 0:
+                lines.append((zx, zy - 1))
+            if zy != self.size - 1:
+                lines.append((zx, zy + 1))
+            sx, sy = random.choice(lines)
+            self.puzzle[zx][zy] = self.puzzle[sx][sy]
+            self.puzzle[sx][sy] = 0
         self.reshape_puzzle()
         return self.shape.strip()
 
@@ -49,29 +61,15 @@ class Generator:
                     val += 1
                 l += 1
 
-    def custom_swap(self):
-        zx, zy = self.zero_coord()
-        lines = []
-        if zx != 0:
-            lines.append((zx - 1, zy))
-        if zx != self.size - 1:
-            lines.append((zx + 1, zy))
-        if zy != 0:
-            lines.append((zx, zy - 1))
-        if zy != self.size - 1:
-            lines.append((zx, zy + 1))
-        sx, sy = random.choice(lines)
-        self.puzzle[zx][zy] = self.puzzle[sx][sy]
-        self.puzzle[sx][sy] = 0
-
     def reshape_puzzle(self):
+        self.shape = f"{self.size}\n"
         for row in self.puzzle:
             for item in row:
                 self.shape += str(item) + ' '
             self.shape += '\n'
 
     def zero_coord(self):
-        for i in range(self.size):
-            for j in range(self.size):
-                if self.puzzle[i][j] == 0:
-                    return i, j
+        for n in range(self.size):
+            for m in range(self.size):
+                if self.puzzle[n][m] == 0:
+                    return n, m
