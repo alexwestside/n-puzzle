@@ -6,13 +6,13 @@ class Errors:
         pass
 
     def common(self, msg):
-        self.print(msg)
+        self.__print(msg)
         sys.exit(0)
 
     def critical(self, msg):
-        self.print(msg)
+        self.__print(msg)
         sys.exit(1)
 
     @staticmethod
-    def print(msg):
+    def __print(msg):
         print("Exiting program...{}".format(msg))
