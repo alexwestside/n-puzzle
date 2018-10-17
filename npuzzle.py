@@ -3,7 +3,8 @@ from puzzle import Puzzle
 
 
 def main():
-    puzzle.validate()
+    # print(puzzle.list_puzzle)
+    # print(puzzle.size)
     pass
 
 
@@ -12,18 +13,22 @@ if __name__ == '__main__':
     args = ArgParser().parse()
 
     if args.file and args.size:
-        puzzle.common("")
+        puzzle.common("flag --file and --size must be specify separately")
 
     if args.size and (args.size < 2 or args.size == 0):
-        puzzle.critical("")
+        puzzle.critical("size should be >= 2")
 
     if args.file:
         puzzle.read(args)
+        puzzle.validate()
+        puzzle.is_solvable()
     else:
         if args.size:
             puzzle.size = args.size
         puzzle.generate()
 
-    print(puzzle.raw)
+    puzzle.get_heuristic_type(args.htype)
+
+    puzzle.print()
 
     main()

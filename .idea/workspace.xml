@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9adf1831-f414-480c-badd-63f019c128fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_puzzle.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argparser.py" beforeDir="false" afterPath="$PROJECT_DIR$/argparser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heuristics.py" beforeDir="false" afterPath="$PROJECT_DIR$/heuristics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/npuzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/npuzzle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/puzzle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/validator.py" afterDir="false" />
@@ -15,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/n_puzzle$nuzzle_py.coverage" NAME="nuzzle.py Coverage Results" MODIFIED="1539760451463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/n_puzzle$nuzzle_py.coverage" NAME="nuzzle.py Coverage Results" MODIFIED="1539774774422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-798891601">
@@ -29,26 +33,28 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="author" value="1" />
-          <entry key="py" value="10" />
+          <entry key="py" value="11" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="10" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="author" value="16" />
           <entry key="dummy" value="8" />
-          <entry key="py" value="2122" />
+          <entry key="py" value="3477" />
+          <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="24" />
-          <entry key="Python" value="2122" />
+          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="Python" value="3477" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -60,12 +66,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/npuzzle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="403">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <marker date="1539760104860" expanded="true" signature="71:76" ph="..." />
-                <marker date="1539760104860" expanded="true" signature="71:105" ph="..." />
+                <marker date="1539771541112" expanded="true" signature="128:140" ph="..." />
               </folding>
             </state>
           </provider>
@@ -74,11 +79,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/puzzle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="282">
+              <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="38" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1539760104854" expanded="true" signature="132:137" ph="..." />
+                <marker date="1539773000961" expanded="true" signature="178:183" ph="..." />
               </folding>
             </state>
           </provider>
@@ -87,12 +92,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/validator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="401">
+              <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <marker date="1539759162438" expanded="true" signature="86:91" ph="..." />
-                <marker date="1539759162438" expanded="true" signature="220:312" ph="..." />
+                <marker date="1539774774415" expanded="true" signature="86:91" ph="..." />
+                <marker date="1539774774415" expanded="true" signature="299:391" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/errors.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <folding>
+                <marker date="1539699373673" expanded="true" signature="26:31" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,11 +118,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            <state relative-caret-position="310">
+              <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
               <folding>
-                <marker date="1539759992323" expanded="true" signature="127:133" ph="..." />
-                <marker date="1539759992323" expanded="true" signature="1991:1997" ph="..." />
+                <marker date="1539773661791" expanded="true" signature="127:133" ph="..." />
+                <marker date="1539773661791" expanded="true" signature="2034:2040" ph="..." />
               </folding>
             </state>
           </provider>
@@ -114,23 +131,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/argparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state relative-caret-position="75">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
-                <marker date="1539695385644" expanded="true" signature="101:106" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-              <folding>
-                <marker date="1539699273359" expanded="true" signature="36:41" ph="..." />
+                <marker date="1539768779373" expanded="true" signature="115:120" ph="..." />
               </folding>
             </state>
           </provider>
@@ -139,8 +144,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heuristics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="-74">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <folding>
+                <marker date="1539768872138" expanded="true" signature="351:356" ph="..." />
+                <marker date="1539768872138" expanded="true" signature="1226:1296" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,14 +176,15 @@
       <list>
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/author" />
-        <option value="$PROJECT_DIR$/argparser.py" />
         <option value="$PROJECT_DIR$/errors.py" />
         <option value="$PROJECT_DIR$/timer.py" />
+        <option value="$PROJECT_DIR$/argparser.py" />
         <option value="$PROJECT_DIR$/heuristics.py" />
-        <option value="$PROJECT_DIR$/validator.py" />
-        <option value="$PROJECT_DIR$/generator.py" />
-        <option value="$PROJECT_DIR$/puzzle.py" />
+        <option value="$PROJECT_DIR$/test_puzzle.txt" />
         <option value="$PROJECT_DIR$/npuzzle.py" />
+        <option value="$PROJECT_DIR$/puzzle.py" />
+        <option value="$PROJECT_DIR$/generator.py" />
+        <option value="$PROJECT_DIR$/validator.py" />
       </list>
     </option>
   </component>
@@ -200,6 +210,11 @@
             <path>
               <item name="n-puzzle" type="b2602c69:ProjectViewProjectNode" />
               <item name="n-puzzle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="n-puzzle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="n-puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -240,7 +255,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/npuzzle.py" />
-      <option name="PARAMETERS" value="--size 5" />
+      <option name="PARAMETERS" value="--file test_puzzle.txt" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -264,14 +279,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.27108434" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40481928" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -295,17 +311,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/author">
@@ -332,10 +337,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test_puzzle.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/argparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+            <marker date="1539768779373" expanded="true" signature="115:120" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/heuristics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="-74">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <marker date="1539768872138" expanded="true" signature="351:356" ph="..." />
+            <marker date="1539768872138" expanded="true" signature="1226:1296" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npuzzle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1539771541112" expanded="true" signature="128:140" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding>
+            <marker date="1539773661791" expanded="true" signature="127:133" ph="..." />
+            <marker date="1539773661791" expanded="true" signature="2034:2040" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -349,59 +398,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/argparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-            <marker date="1539695385644" expanded="true" signature="101:106" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/puzzle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        <state relative-caret-position="282">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="38" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1539760104854" expanded="true" signature="132:137" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding>
-            <marker date="1539759992323" expanded="true" signature="127:133" ph="..." />
-            <marker date="1539759992323" expanded="true" signature="1991:1997" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/npuzzle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <marker date="1539760104860" expanded="true" signature="71:76" ph="..." />
-            <marker date="1539760104860" expanded="true" signature="71:105" ph="..." />
+            <marker date="1539773000961" expanded="true" signature="178:183" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/validator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="401">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1539759162438" expanded="true" signature="86:91" ph="..." />
-            <marker date="1539759162438" expanded="true" signature="220:312" ph="..." />
+            <marker date="1539774774415" expanded="true" signature="86:91" ph="..." />
+            <marker date="1539774774415" expanded="true" signature="299:391" ph="..." />
           </folding>
         </state>
       </provider>

@@ -31,6 +31,7 @@ class Generator:
             self.__puzzle[sx][sy] = 0
         self.__reshape_puzzle()
         self.raw = self.__shape.strip()
+        self.matrix_puzzle = self.__puzzle
 
     def __generate_solved_puzzle(self):
         m, n = self.size, self.size
