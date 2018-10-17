@@ -4,6 +4,7 @@ from puzzle import Puzzle
 
 def main():
     puzzle.validate()
+    pass
 
 
 if __name__ == '__main__':
@@ -21,7 +22,7 @@ if __name__ == '__main__':
     else:
         if args.size:
             puzzle.size = args.size
-        puzzle.raw = puzzle.generate()
+        puzzle.generate()
 
     print(puzzle.raw)
 

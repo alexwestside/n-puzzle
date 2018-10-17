@@ -9,7 +9,7 @@ class Validator(Errors):
         self.list_puzzle = []
         self.matrix = []
 
-    def validate(self, size):
+    def validate(self):
         self.delete_comments()
         self.parse_input()
         self.current_size()
@@ -31,10 +31,11 @@ class Validator(Errors):
                 self.critical("invalid numbers format: " + str(e))
 
     def current_size(self):
+        size_line = self.matrix.pop(0)
         try:
-            if len(self.matrix.pop(0)) != 1:
+            if len(size_line) != 1:
                 self.critical(str(IndexError))
-            self.size = int(self.matrix.pop(0)[0])
+            self.size = int(size_line[0])
         except Exception as e:
             self.critical("invalid puzzle size format" + str(e))
         if self.size < 2:

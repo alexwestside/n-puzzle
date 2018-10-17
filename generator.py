@@ -6,6 +6,7 @@ class Generator:
 
     def __init__(self):
         self.size = 3
+        self.raw = []
         self.__steps = 500
         self.__shape = ""
         self.__puzzle = []
@@ -29,7 +30,7 @@ class Generator:
             self.__puzzle[zx][zy] = self.__puzzle[sx][sy]
             self.__puzzle[sx][sy] = 0
         self.__reshape_puzzle()
-        return self.__shape.strip()
+        self.raw = self.__shape.strip()
 
     def __generate_solved_puzzle(self):
         m, n = self.size, self.size
