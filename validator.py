@@ -5,7 +5,7 @@ import re
 
 class Validator(Errors):
     def __init__(self):
-        self.error = Errors.__init__(self)
+        Errors.__init__(self)
         self.lines_puzzle = []
         self.matrix_puzzle = []
         self.list_puzzle = []
@@ -15,6 +15,13 @@ class Validator(Errors):
         self.delete_comments()
         self.parse_input()
         self.current_size()
+        self.check_len_lines()
+
+    def check_len_lines(self):
+        curr_len = len(self.matrix_puzzle[0])
+        for line in self.matrix_puzzle:
+            if len(line) != curr_len:
+                self.critical("invalid puzzle format")
 
     def delete_comments(self):
         for line in StringIO(self.raw):
@@ -44,17 +51,24 @@ class Validator(Errors):
             self.critical("puzzle size should be >= 2")
 
     def is_solvable(self):
+        print(self.matrix_puzzle)
+        print(self.size)
         for row in self.matrix_puzzle:
             self.list_puzzle.extend(row)
-        print(self.list_puzzle)
         self.count_inversions()
-        if self.size & 1 == 0:  # "EVEN"
-            blank_row = self.get_blank_row()
-            if blank_row % 2 == 0 and self.inversions % 2 == 0:
-                self.error.common("puzzle is not solvable")
+        if self.size % 2 == 0:
+            blank_row = self.count_row_without_zero()
+            # if blank_row % 2 == 0 and self.inversions % 2 == 0:
+            #     self.error.common("puzzle is not solvable")
+            if blank_row % 2 == 0 and self.inversions % 2 != 0:
+                print('The puzzle is solvable')
+            elif blank_row % 2 != 0 and self.inversions % 2 == 0:
+                print('The puzzle is solvable')
+            else:
+                self.common("puzzle is not solvable")
         else:
-            if self.inversions & 1 == 0:
-                self.error.common("puzzle is not solvable")
+            if self.inversions % 2 == 0:
+                self.common("puzzle is not solvable")
         print('Puzzle is solvable')
 
     def count_inversions(self):
@@ -63,7 +77,7 @@ class Validator(Errors):
                 if self.list_puzzle[i] and self.list_puzzle[j] and self.list_puzzle[i] > self.list_puzzle[j]:
                     self.inversions += 1
 
-    def get_blank_row(self):
+    def count_row_without_zero(self):
         for i, row in reversed(list(enumerate(self.matrix_puzzle))):
             if 0 in row:
                 return self.size - i

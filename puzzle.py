@@ -19,9 +19,9 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
             self.critical("Input error: " + str(e))
 
     def print(self):
-        print("Current heuristic type: {}".format(self.get_heuristic_name()))
-        print("Current puzzle size: {}".format(self.size))
-        print("Current puzzle shape:")
+        print("Heuristic type: {}".format(self.get_heuristic_name()))
+        print("Puzzle size: {}".format(self.size))
+        print("Puzzle shape:")
         max_width = len(str((self.size * self.size) - 1))
         for line in self.matrix_puzzle:
             ln = ""

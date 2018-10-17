@@ -21,13 +21,15 @@ if __name__ == '__main__':
     if args.file:
         puzzle.read(args)
         puzzle.validate()
-        puzzle.is_solvable()
+
     else:
         if args.size:
             puzzle.size = args.size
         puzzle.generate()
 
     puzzle.get_heuristic_type(args.htype)
+
+    puzzle.is_solvable()
 
     puzzle.print()
 
