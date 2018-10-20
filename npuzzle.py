@@ -3,9 +3,11 @@ from puzzle import Puzzle
 
 
 def main():
-    puzzle.print()
-    # if puzzle.solver() is not None:
-        # puzzle.print()
+    puzzle.generate(args.file)
+    puzzle.print(None)
+    node = puzzle.solver()
+    if node is not None:
+        puzzle.print(node)
 
 
 if __name__ == '__main__':
@@ -25,7 +27,6 @@ if __name__ == '__main__':
     else:
         if args.size:
             puzzle.size = args.size
-        puzzle.generate()
 
     puzzle.get_heuristic_type(args.htype)
 

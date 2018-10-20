@@ -34,8 +34,24 @@ class Heuristics:
     def get_heuristic_name(self):
         return self.heuristics_name.get(self.heuristics_symbol)
 
-    def manhattan(self):
-        pass
+    def manhattan(self, grid, n, solved_puzzle):
+        solved = {}
+        unsolved = {}
+
+        h = 0
+        for i in range(n):
+            for j in range(n):
+                solved[solved_puzzle[i][j]] = (i, j)
+                unsolved[grid[i][j]] = (i, j)
+        for num, solved_coors in solved.items():
+            unsolved_coors = unsolved[num]
+            for c in range(2):
+                if unsolved_coors[c] < solved_coors[c]:
+                    h += solved_coors[c] - unsolved_coors[c]
+                else:
+                    h += unsolved_coors[c] - solved_coors[c]
+
+        return h
 
     def linear_manhattan(self):
         pass

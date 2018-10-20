@@ -21,10 +21,14 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
         except Exception as e:
             self.critical_error("Input error: " + str(e))
 
-    def print(self):
-        print("Heuristic type: {}".format(self.get_heuristic_name()))
-        print("Puzzle size: {}".format(self.size))
-        print("Puzzle shape:")
+    def print(self, node):
+        if node is None:
+            print("Heuristic type: {}".format(self.get_heuristic_name()))
+            print("Puzzle size: {}".format(self.size))
+            print("Puzzle shape:")
+        else:
+            print('\nSolution is:')
+            self.matrix_puzzle = node.grid
         max_width = len(str((self.size * self.size) - 1))
         for line in self.matrix_puzzle:
             ln = ""
@@ -33,7 +37,7 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
             print(ln)
 
     def solver(self):
-        node = Node(None, self.matrix_puzzle, self.size, 0, self.s, self.heuristics_type)
+        node = Node(None, self.matrix_puzzle, self.size, 0, self.solved_puzzle, self.heuristics_type)
 
         start_set = []
         heapq.heappush(start_set, (node.FSCORE, node))
@@ -43,23 +47,23 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
         # complex_in_size = 0
 
         while start_set:
-            current_node = heapq.heappop(start_set)[1]
+            node = heapq.heappop(start_set)[1]
             # complex_in_time += 1
-            end_set[(str(current_node.grid))] = None
-            if current_node.solved is True:
-                return current_node
+            end_set[(str(node.grid))] = None
+            if node.solved() is True:
+                return node
                 # print_report(current_node, solution_sequence, complex_in_time,
                 #              complex_in_size, start_time)
                 # sys.exit(0)
             # if verbose:
             #     print(current_node)
-            solutions = current_node.get_all_children()
+            solutions = node.get_child_nods()
             clean_solutions = list(filter(lambda x: str(x.grid) not in end_set, solutions))
 
             # complex_in_size += len(clean_solutions)
 
-            for candidate in clean_solutions:
-                heapq.heappush(start_set, (candidate.F, candidate))
+            for curr_node in clean_solutions:
+                heapq.heappush(start_set, (curr_node.FSCORE, curr_node))
 
         self.common_error("Does not exist any solution")
         return None

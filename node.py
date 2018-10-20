@@ -12,7 +12,6 @@ class Node:
         self.HVALUE = None
         self.FSCORE = None
         self.parent = None
-        self.grid = None
         self.zx = 0
         self.zy = 0
         self.n = n
@@ -26,7 +25,7 @@ class Node:
 
     def new_node(self, x, y):
         new_grid = self.swap_target(x, y)
-        node = Node(new_grid, self.n, self.GVALUE + 1, self.solved_puzzle, self.heuristic_func)
+        node = Node(self, new_grid, self.n, self.GVALUE + 1, self.solved_puzzle, self.heuristic_func)
         # node.compute()
         return node
 
