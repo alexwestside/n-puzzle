@@ -21,7 +21,7 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
         except Exception as e:
             self.critical_error("Input error: " + str(e))
 
-    def print(self, node):
+    def print(self, node=None):
         if node is None:
             print("Heuristic type: {}".format(self.get_heuristic_name()))
             print("Puzzle size: {}".format(self.size))

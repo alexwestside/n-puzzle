@@ -4,10 +4,10 @@ from puzzle import Puzzle
 
 def main():
     puzzle.generate(args.file)
-    puzzle.print(None)
+    puzzle.print()
     node = puzzle.solver()
     if node is not None:
-        puzzle.print(node)
+        puzzle.print(node=node)
 
 
 if __name__ == '__main__':
