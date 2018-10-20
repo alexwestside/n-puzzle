@@ -5,11 +5,11 @@ class Errors:
     def __init__(self):
         pass
 
-    def common(self, msg):
+    def common_error(self, msg):
         self.__print(msg)
         sys.exit(0)
 
-    def critical(self, msg):
+    def critical_error(self, msg):
         self.__print(msg)
         sys.exit(1)
 

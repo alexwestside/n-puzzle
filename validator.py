@@ -21,7 +21,7 @@ class Validator(Errors):
         curr_len = len(self.matrix_puzzle[0])
         for line in self.matrix_puzzle:
             if len(line) != curr_len:
-                self.critical("invalid puzzle format")
+                self.critical_error("invalid puzzle format")
 
     def delete_comments(self):
         for line in StringIO(self.raw):
@@ -37,18 +37,18 @@ class Validator(Errors):
             try:
                 self.matrix_puzzle.append(list(map(lambda x: int(x), line.split())))
             except Exception as e:
-                self.critical("invalid numbers format: " + str(e))
+                self.critical_error("invalid numbers format: " + str(e))
 
     def current_size(self):
         size_line = self.matrix_puzzle.pop(0)
         try:
             if len(size_line) != 1:
-                self.critical(str(IndexError))
+                self.critical_error(str(IndexError))
             self.size = int(size_line[0])
         except Exception as e:
-            self.critical("invalid puzzle size format" + str(e))
+            self.critical_error("invalid puzzle size format" + str(e))
         if self.size < 2:
-            self.critical("puzzle size should be >= 2")
+            self.critical_error("puzzle size should be >= 2")
 
     def is_solvable(self):
         print(self.matrix_puzzle)
@@ -65,10 +65,10 @@ class Validator(Errors):
             elif blank_row % 2 != 0 and self.inversions % 2 == 0:
                 print('The puzzle is solvable')
             else:
-                self.common("puzzle is not solvable")
+                self.common_error("puzzle is not solvable")
         else:
             if self.inversions % 2 == 0:
-                self.common("puzzle is not solvable")
+                self.common_error("puzzle is not solvable")
         print('Puzzle is solvable')
 
     def count_inversions(self):

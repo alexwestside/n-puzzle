@@ -27,7 +27,7 @@ class Heuristics:
         curr_htype = self.heuristics.get(htype)
         if curr_htype is None:
             print(heuristics_help)
-            self.critical("no given heuristic function couldn't found")
+            self.critical_error("no given heuristic function couldn't found")
         self.heuristics_type = curr_htype
         self.heuristics_symbol = htype
 
