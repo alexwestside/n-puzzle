@@ -26,7 +26,6 @@ class Node:
     def new_node(self, x, y):
         new_grid = self.swap_target(x, y)
         node = Node(self, new_grid, self.n, self.GVALUE + 1, self.solved_puzzle, self.heuristic_func)
-        # node.compute()
         return node
 
     def swap_target(self, target_x, target_y):
