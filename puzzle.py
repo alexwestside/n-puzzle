@@ -8,7 +8,7 @@ import heapq
 
 class Puzzle(Timer, Generator, Validator, Heuristics):
     def __init__(self):
-        self.__timer = Timer.__init__(self)
+        Timer.__init__(self)
         Heuristics.__init__(self)
         Generator.__init__(self)
         Validator.__init__(self)
@@ -47,22 +47,18 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
 
         while start_set:
             node = heapq.heappop(start_set)[1]
-            # complex_in_time += 1
+            self.complex_in_time += 1
             end_set[(str(node.grid))] = None
             if node.solved() is True:
                 return node
-                # print_report(current_node, solution_sequence, complex_in_time,
-                #              complex_in_size, start_time)
-                # sys.exit(0)
             # if verbose:
             #     print(current_node)
             solutions = node.get_child_nods()
             clean_solutions = list(filter(lambda x: str(x.grid) not in end_set, solutions))
 
-            # complex_in_size += len(clean_solutions)
+            self.complex_in_size += len(clean_solutions)
 
             for curr_node in clean_solutions:
                 heapq.heappush(start_set, (curr_node.FSCORE, curr_node))
 
         self.common_error("Does not exist any solution")
-        return None

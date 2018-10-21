@@ -6,8 +6,10 @@ def main():
     puzzle.generate(args.file)
     puzzle.print()
     node = puzzle.solver()
-    if node is not None:
-        puzzle.print(node=node)
+    puzzle.print(node=node)
+    print(f'Execution time: {puzzle.get_execution_time()} ms')
+    print(f'Time complexity -> : {puzzle.complex_in_time} cycles')
+    print(f'Size complexity -> : {puzzle.complex_in_size} moves')
 
 
 if __name__ == '__main__':
@@ -23,7 +25,7 @@ if __name__ == '__main__':
     if args.file:
         puzzle.read(args)
         puzzle.validate()
-        puzzle.is_solvable()
+        # puzzle.is_solvable()
     else:
         if args.size:
             puzzle.size = args.size
