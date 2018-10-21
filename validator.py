@@ -51,8 +51,6 @@ class Validator(Errors):
             self.critical_error("puzzle size should be >= 2")
 
     def is_solvable(self):
-        print(self.matrix_puzzle)
-        print(self.size)
         for row in self.matrix_puzzle:
             self.list_puzzle.extend(row)
         self.count_inversions()

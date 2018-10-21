@@ -12,7 +12,6 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
         Heuristics.__init__(self)
         Generator.__init__(self)
         Validator.__init__(self)
-        # Node.__init__(self)
 
     def read(self, args):
         try:
