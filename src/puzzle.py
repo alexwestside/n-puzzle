@@ -1,8 +1,8 @@
-from timer import Timer
-from generator import Generator
-from validator import Validator
-from heuristics import Heuristics
-from node import Node
+from src.timer import Timer
+from src.generator import Generator
+from src.validator import Validator
+from src.heuristics import Heuristics
+from src.node import Node
 import heapq
 
 

@@ -1,5 +1,5 @@
 from argparse import ArgumentParser, RawTextHelpFormatter
-from heuristics import heuristics_help
+from src.heuristics import heuristics_help
 
 
 class ArgParser:

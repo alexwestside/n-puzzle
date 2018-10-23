@@ -1,5 +1,5 @@
-from argparser import ArgParser
-from puzzle import Puzzle
+from src.argparser import ArgParser
+from src.puzzle import Puzzle
 
 
 def main():

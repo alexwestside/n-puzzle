@@ -1,4 +1,4 @@
-from errors import Errors
+from src.errors import Errors
 from io import StringIO
 import re
 
@@ -54,19 +54,13 @@ class Validator(Errors):
         for row in self.matrix_puzzle:
             self.list_puzzle.extend(row)
         self.count_inversions()
-        if self.size % 2 == 0:
+        if self.size & 1 == 0:
             blank_row = self.count_row_without_zero()
-            # if blank_row % 2 == 0 and self.inversions % 2 == 0:
-            #     self.error.common("puzzle is not solvable")
-            if blank_row % 2 == 0 and self.inversions % 2 != 0:
-                print('The puzzle is solvable')
-            elif blank_row % 2 != 0 and self.inversions % 2 == 0:
-                print('The puzzle is solvable')
-            else:
-                self.common_error("puzzle is not solvable")
+            if (blank_row & 1 == 0 and self.inversions & 1 == 0) or (blank_row & 1 != 0 and self.inversions & 1 != 0):
+                self.common_error("puzzle is unsolvable")
         else:
-            if self.inversions % 2 == 0:
-                self.common_error("puzzle is not solvable")
+            if self.inversions & 1 == 0:
+                self.common_error("puzzle is unsolvable")
         print('Puzzle is solvable')
 
     def count_inversions(self):
