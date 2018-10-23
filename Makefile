@@ -1,12 +1,15 @@
 
 TARGET=npuzzle
+NAME=n-puzzle
 
 .PHONY: all
 
 all: dockerbuild dockerrun
 
 dockerbuild:
-	docker build --no-cache -t ${TARGET} .
+	@echo Docker build NPUZZLE image
+	@docker build --no-cache -t ${TARGET} .
 
 dockerrun:
-	docker run -t ${TARGET}
+	@echo Docker run NPUZZLE container
+	@docker run --rm -ti --name=${NAME} -t ${TARGET}

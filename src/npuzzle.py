@@ -12,7 +12,7 @@ def main():
     print(f'Size complexity -> : {puzzle.complex_in_size} moves')
 
 
-if __name__ == '__main__':
+if __name__ == '__main__' and __package__:
     puzzle = Puzzle()
     args = ArgParser().parse()
 

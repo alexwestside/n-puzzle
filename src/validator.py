@@ -1,4 +1,4 @@
-from src.errors import Errors
+from .errors import Errors
 from io import StringIO
 import re
 
