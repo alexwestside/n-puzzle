@@ -16,6 +16,7 @@ class Validator(Errors):
         self.parse_input()
         self.current_size()
         self.check_len_lines()
+        self.check_sum_natural_number()
 
     def check_len_lines(self):
         curr_len = len(self.matrix_puzzle[0])
@@ -60,3 +61,13 @@ class Validator(Errors):
         for i, row in reversed(list(enumerate(self.matrix_puzzle))):
             if 0 in row:
                 return self.size - i
+
+    def check_sum_natural_number(self):
+        n = self.size ** 2 - 1
+        snn = int((n * (n + 1)) / 2)
+        curr_snn = 0
+        for line in self.matrix_puzzle:
+            for val in line:
+                curr_snn += val
+        if snn != curr_snn:
+            self.critical_error("invalid puzzle format")
