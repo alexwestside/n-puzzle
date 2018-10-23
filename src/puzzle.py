@@ -4,6 +4,7 @@ from src.validator import Validator
 from src.heuristics import Heuristics
 from src.node import Node
 import heapq
+import os
 
 
 class Puzzle(Timer, Generator, Validator, Heuristics):
@@ -14,9 +15,14 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
         Validator.__init__(self)
 
     def read(self, args):
+        if os.path.isfile(args.file) is False:
+            self.critical_error("Object is not a file")
+
         try:
             with open(args.file, 'r') as file:
                 self.raw = file.read()
+                if len(self.raw) == 0:
+                    self.critical_error("file is empty")
         except Exception as e:
             self.critical_error("Input error: " + str(e))
 
