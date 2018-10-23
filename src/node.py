@@ -11,7 +11,6 @@ class Node:
         self.GVALUE = gvalue
         self.HVALUE = None
         self.FSCORE = None
-        self.parent = None
         self.zx = 0
         self.zy = 0
         self.n = n

@@ -9,7 +9,6 @@ class ArgParser:
     def parse(self):
         self.parser.add_argument('--file', metavar='file_path', help='path to the input file')
         self.parser.add_argument('--htype', metavar='heuristic', default='m', help=heuristics_help)
-        self.parser.add_argument('-v', action='store_true', default=False, help='Verbose. Show all visited options')
         self.parser.add_argument('--path', action='store_true', default=False, help='Show solution path')
         self.parser.add_argument('--size', metavar='size', type=int, help='specify puzzle size')
         return self.parser.parse_args()
