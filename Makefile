@@ -4,7 +4,13 @@ NAME=n-puzzle
 
 .PHONY: all
 
-all: dockerbuild dockerrun
+all:
+	pip3 install .
+
+clean:
+	pip3 uninstall npuzzle -y
+
+docker: dockerbuild dockerrun
 
 dockerbuild:
 	@echo Docker build NPUZZLE image
