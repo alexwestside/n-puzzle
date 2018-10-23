@@ -2,17 +2,7 @@ from src.argparser import ArgParser
 from src.puzzle import Puzzle
 
 
-def main():
-    puzzle.generate(args.file)
-    puzzle.print()
-    node = puzzle.solver()
-    puzzle.print(node=node)
-    print(f'Execution time: {puzzle.get_execution_time()} ms')
-    print(f'Time complexity -> : {puzzle.complex_in_time} cycles')
-    print(f'Size complexity -> : {puzzle.complex_in_size} moves')
-
-
-if __name__ == '__main__' and __package__:
+def run():
     puzzle = Puzzle()
     args = ArgParser().parse()
 
@@ -31,5 +21,13 @@ if __name__ == '__main__' and __package__:
             puzzle.size = args.size
 
     puzzle.get_heuristic_type(args.htype)
+    puzzle.generate(args.file)
+    puzzle.print()
+    puzzle.print(node=puzzle.solver())
+    print(f'Execution time: {puzzle.get_execution_time()} ms')
+    print(f'Time complexity -> : {puzzle.complex_in_time} cycles')
+    print(f'Size complexity -> : {puzzle.complex_in_size} moves')
 
-    main()
+
+# if __name__ == '__main__':
+#     npuzzle()
