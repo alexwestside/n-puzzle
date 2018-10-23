@@ -43,13 +43,9 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
 
     def solver(self):
         node = Node(None, self.matrix_puzzle, self.size, 0, self.solved_puzzle, self.heuristics_type)
-
         start_set = []
         heapq.heappush(start_set, (node.FSCORE, node))
-
         end_set = {}
-        # complex_in_time = 0
-        # complex_in_size = 0
 
         while start_set:
             node = heapq.heappop(start_set)[1]
@@ -57,8 +53,6 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
             end_set[(str(node.grid))] = None
             if node.solved() is True:
                 return node
-            # if verbose:
-            #     print(current_node)
             solutions = node.get_child_nods()
             clean_solutions = list(filter(lambda x: str(x.grid) not in end_set, solutions))
 
