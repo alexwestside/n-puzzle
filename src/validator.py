@@ -50,19 +50,6 @@ class Validator(Errors):
         if self.size < 2:
             self.critical_error("puzzle size should be >= 2")
 
-    def is_solvable(self):
-        for row in self.matrix_puzzle:
-            self.list_puzzle.extend(row)
-        self.count_inversions()
-        if self.size & 1 == 0:
-            blank_row = self.count_row_without_zero()
-            if (blank_row & 1 == 0 and self.inversions & 1 == 0) or (blank_row & 1 != 0 and self.inversions & 1 != 0):
-                self.common_error("puzzle is unsolvable")
-        else:
-            if self.inversions & 1 == 0:
-                self.common_error("puzzle is unsolvable")
-        print('Puzzle is solvable')
-
     def count_inversions(self):
         for i in range(self.size ** 2 - 1):
             for j in range(i, self.size ** 2):
