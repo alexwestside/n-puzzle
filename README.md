@@ -1,7 +1,7 @@
 # n-puzzle
 Solve n-puzzle using A* algorithm (Python)
 
-I. First step - build app:
+I. Build app:
     
     -> in docker flow, run command:
         - make docker
