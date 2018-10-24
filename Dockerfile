@@ -8,8 +8,9 @@ COPY author ./
 COPY README.md ./
 COPY requirements.txt ./
 COPY src ./src/
-COPY test ./test/
+COPY tests ./tests/
 COPY setup.py ./
+COPY Makefile ./
 
 RUN pip install --no-cache-dir -r requirements.txt
 

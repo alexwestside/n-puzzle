@@ -4,11 +4,10 @@ NAME=n-puzzle
 
 .PHONY: all
 
-all:
-	pip3 install .
+all: build
 
-clean:
-	pip3 uninstall npuzzle -y
+build: test
+	pip3 install .
 
 docker: dockerbuild dockerrun
 
@@ -19,3 +18,11 @@ dockerbuild:
 dockerrun:
 	@echo Docker run NPUZZLE container
 	@docker run --rm -ti --name=${NAME} -t ${TARGET}
+
+test: clean
+	cd tests && pytest -v test.py && cd ..
+
+clean:
+	pip3 uninstall npuzzle -y
+	rm -rf  rm -rf tests/__pycache__/
+	rm -rf  rm -rf .pytest_cache

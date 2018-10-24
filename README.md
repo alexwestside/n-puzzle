@@ -1,11 +1,15 @@
 # n-puzzle
 Solve n-puzzle using A* algorithm (Python)
 
-Run the project by one command: **make**
+I. First step - build app:
+    
+    -> in docker flow, run command:
+        - make docker
+        - make build 
+        
+    -> on host flow, run command:
+        - make
 
-Steps of make:
- - create Docker image
- - run Docker image
- - install dependencies and setup project
-
-On finish you can just run: **npuzzle**
+II. Run app:
+    
+    -> docker and host flow run: npuzzle

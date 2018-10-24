@@ -15,13 +15,14 @@ class Puzzle(Timer, Generator, Validator, Heuristics):
         Generator.__init__(self)
         Validator.__init__(self)
 
-    def read(self, args):
-        if os.path.isfile(args.file) is False:
+    def read(self, file):
+        if os.path.isfile(file) is False:
+            print(file)
             self.critical_error("Object is not a file")
 
         try:
-            with open(args.file, 'r') as file:
-                self.raw = file.read()
+            with open(file, 'r') as f:
+                self.raw = f.read()
                 if len(self.raw) == 0:
                     self.critical_error("file is empty")
         except Exception as e:

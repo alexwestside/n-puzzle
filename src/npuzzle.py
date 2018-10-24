@@ -13,7 +13,7 @@ def run():
         puzzle.critical_error("size should be >= 2")
 
     if args.file:
-        puzzle.read(args)
+        puzzle.read(args.file)
         puzzle.validate()
     else:
         if args.size:

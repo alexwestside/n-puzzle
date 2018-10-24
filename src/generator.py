@@ -17,6 +17,7 @@ class Generator:
         random.seed()
         self.solved_puzzle = self.__generate_solved_puzzle()
         if file is None:
+            self.limit()
             self.matrix_puzzle = self.generate_new_puzzle_shape(self.solved_puzzle)
 
     def generate_new_puzzle_shape(self, puzzle):
@@ -82,3 +83,9 @@ class Generator:
             for m in range(self.size):
                 if puzzle[n][m] == 0:
                     return n, m
+
+    def limit(self):
+        if self.size == 4:
+            self.__steps = random.randint(100, 200)
+        if self.size > 4:
+            self.__steps = random.randint(50, 100)
